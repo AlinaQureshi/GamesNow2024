@@ -14,7 +14,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private const float hoverHeight = 0.5f;
     private Renderer itemRenderer;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponentInChildren<Rigidbody>();
         originalPosition = transform.position;
@@ -23,7 +23,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         originalMaterial = itemRenderer.material;
     }
 
-    void OnMouseDown()
+    private void OnMouseDown()
     {
         if (!GameManager.Instance.isGameActive){return;}
         print("OnMouseDown");
@@ -39,7 +39,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         itemRenderer.material.color = Color.yellow;
     }
 
-    void OnMouseDrag()
+    private void OnMouseDrag()
     {
         if (!isDragging){return;}
         print("OnMouseDrag");
@@ -52,7 +52,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.position = curPosition;
     }
 
-    void OnMouseUp()
+    private void OnMouseUp()
     {
         if (!isDragging){return;}
         print("OnMouseUp");

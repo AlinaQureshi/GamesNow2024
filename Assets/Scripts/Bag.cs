@@ -5,14 +5,15 @@ public class Bag : MonoBehaviour
 {
     public List<DraggableItem> itemsInBag = new();
     public float maxCapacity = 10f;
-   //[SerializeField] private BoxCollider bagCollider;
 
-    void Awake()
+    //[SerializeField] private BoxCollider bagCollider;
+
+    private void Awake()
     {
         //bagCollider = GetComponentInChildren<BoxCollider>();
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<DraggableItem>(out var item))
         {
@@ -22,7 +23,7 @@ public class Bag : MonoBehaviour
         }}
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<DraggableItem>(out var item))
         {

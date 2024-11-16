@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public Transform itemSpawnArea;
     public bool isGameActive = true;
     public GameObject winEffect;
-    
-    void Awake()
+
+    private void Awake()
     {
         if (Instance == null){Instance = this;}
 
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         SpawnItems();
     }
 
-    void SpawnItems()
+    private void SpawnItems()
     {
         float spacing = 1.5f;
         int itemsPerRow = 3;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ClearLevel()
+    private void ClearLevel()
     {
         foreach (var item in bag.itemsInBag)
         {
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void WinLevel()
+    private void WinLevel()
     {
         isGameActive = false;
         if (winEffect != null)
