@@ -1,12 +1,15 @@
 fileFormatVersion: 2
-guid: da7e706d9c05a094ab5b3121cfdcda2f
+guid: f41fe5585fe554e838e6b6e50c6b7c16
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5177388603050735206
+    second: 9-Sliced
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,24 +40,24 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
-  nPOTScale: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 64, y: 64, z: 64, w: 64}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -65,7 +68,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -107,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -121,12 +124,74 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 9-Sliced
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 126, y: 73}
+        - {x: 120, y: 92}
+        - {x: 108, y: 108}
+        - {x: 92, y: 120}
+        - {x: 73, y: 126}
+        - {x: -73, y: 126}
+        - {x: -92, y: 120}
+        - {x: -108, y: 108}
+        - {x: -120, y: 92}
+        - {x: -126, y: 73}
+        - {x: -126, y: -73}
+        - {x: -120, y: -92}
+        - {x: -108, y: -108}
+        - {x: -92, y: -120}
+        - {x: -73, y: -126}
+        - {x: 73, y: -126}
+        - {x: 92, y: -120}
+        - {x: 108, y: -108}
+        - {x: 120, y: -92}
+        - {x: 126, y: -73}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: a99410b1f783628b0800000000000000
+      internalID: -5177388603050735206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
-    physicsShape: []
+    physicsShape:
+    - - {x: 126, y: 73}
+      - {x: 120, y: 92}
+      - {x: 108, y: 108}
+      - {x: 92, y: 120}
+      - {x: 73, y: 126}
+      - {x: -73, y: 126}
+      - {x: -92, y: 120}
+      - {x: -108, y: 108}
+      - {x: -120, y: 92}
+      - {x: -126, y: 73}
+      - {x: -126, y: -73}
+      - {x: -120, y: -92}
+      - {x: -108, y: -108}
+      - {x: -92, y: -120}
+      - {x: -73, y: -126}
+      - {x: 73, y: -126}
+      - {x: 92, y: -120}
+      - {x: 108, y: -108}
+      - {x: 120, y: -92}
+      - {x: 126, y: -73}
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +200,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      9-Sliced: -5177388603050735206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
