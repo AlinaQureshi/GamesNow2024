@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public bool isGameActive = true;
     public GameObject winEffect;
 
+    public GridLayout itemGrid;
+
     private void Awake()
     {
         if (Instance == null){Instance = this;}
@@ -22,7 +24,9 @@ public class GameManager : MonoBehaviour
     {
         currentLevel = levelData;
         ClearLevel();
-        SpawnItems();
+        //SpawnItems();
+        SpawnItemsInGrid();
+
     }
 
     private void SpawnItems()
@@ -42,6 +46,23 @@ public class GameManager : MonoBehaviour
             draggable.itemData = itemData;
 
             currentItem++;
+        }
+    }
+
+    private void SpawnItemsInGrid()
+    {
+        int currentIndex = 0;
+
+        foreach (var itemData in currentLevel.availableItems)
+        {
+            Vector3 spawnPosition = itemGrid.GetGridPosition(currentIndex);
+            
+            GameObject item = Instantiate(itemData.prefab, spawnPosition, Quaternion.identity);
+            DraggableItem draggable = item.GetComponent<DraggableItem>();
+            draggable.itemData = itemData;
+            draggable.gridLayout = itemGrid; // assign grid reference to item
+
+            currentIndex++;
         }
     }
 

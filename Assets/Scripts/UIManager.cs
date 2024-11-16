@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private RectTransform gameOverPanelRect;
-    [SerializeField] TMP_Text gameOverText;
+    [SerializeField] private TMP_Text gameOverText;
     [SerializeField] private Button replayButton;
     [SerializeField] private Button menuButton;
 
