@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb37a428b86f649b69e121c393d68c33, type: 3}
-  m_Name: LevelData_Test
+  m_Name: LevelData_Test3
   m_EditorClassIdentifier: 
-  levelName: Test
-  levelPrompt: Pack to <br><i>"Go To Space"</i>
+  levelName: Test3
+  levelPrompt: Level3
   availableItems:
   - {fileID: 11400000, guid: 13f86dcf3f9238e498f1a9943bc63a5b, type: 2}
   - {fileID: 11400000, guid: 53d2d188800100c4ab1bf3c2553bfc64, type: 2}

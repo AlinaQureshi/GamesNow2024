@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,17 @@ public class GameManager : MonoBehaviour
     public bool isGameActive = true;
     public GameObject winEffect;
 
+    [SerializeField] LevelData[] levels;
+    [SerializeField] private TMP_Text promptText;
+    private int currentLevelIndex;
+    
     public GridLayout itemGrid;
 
     private void Awake()
     {
         if (Instance == null){Instance = this;}
 
+        currentLevelIndex = 0;
         LoadLevel(currentLevel);
     }
 
@@ -26,7 +32,7 @@ public class GameManager : MonoBehaviour
         ClearLevel();
         //SpawnItems();
         SpawnItemsInGrid();
-
+        promptText.text = levelData.levelPrompt;
     }
 
     private void SpawnItems()
@@ -73,6 +79,7 @@ public class GameManager : MonoBehaviour
             Destroy(item.gameObject);
         }
         bag.itemsInBag.Clear();
+        promptText.text = "";
     }
 
     public void OnItemDropped(DraggableItem item)
@@ -102,6 +109,16 @@ public class GameManager : MonoBehaviour
             Instantiate(winEffect, bag.transform.position + Vector3.up * 2f, Quaternion.identity);
         }
         print("Level Complete!");
+        GetNextLevel();
         // additional win logics
+    }
+
+    private void GetNextLevel()
+    {
+        currentLevelIndex++;
+        if (currentLevelIndex < levels.Length)
+        {
+            LoadLevel(levels[currentLevelIndex]);
+        }
     }
 }

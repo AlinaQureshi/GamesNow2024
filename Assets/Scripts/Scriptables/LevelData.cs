@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LevelData : ScriptableObject
 {
     public string levelName;
+    public string levelPrompt;
     public List<ItemData> availableItems;
     public List<ItemData> requiredItems;
     public float bagCapacity = 10f;

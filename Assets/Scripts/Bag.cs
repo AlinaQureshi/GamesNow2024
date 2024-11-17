@@ -19,7 +19,7 @@ public class Bag : MonoBehaviour
         {
             if(!itemsInBag.Contains(item)){
             itemsInBag.Add(item);
-            GameManager.Instance.CheckWinCondition(); //??
+            //GameManager.Instance.CheckWinCondition(); //??
         }}
     }
 
