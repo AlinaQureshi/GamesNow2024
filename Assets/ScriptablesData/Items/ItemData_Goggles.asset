@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc9ed8b9f9994176be01fe2aea7fc55, type: 3}
+  m_Name: ItemData_Goggles
+  m_EditorClassIdentifier: 
+  itemName: Goggles
+  prefab: {fileID: 2081565426341106837, guid: 2a3c307f7dbb3684e817a7d5b8803730, type: 3}
+  size: {x: 1, y: 1, z: 1}
+  weight: 1
+  isRequired: 1

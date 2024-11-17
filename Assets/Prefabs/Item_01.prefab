@@ -138,7 +138,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 624045397119315717}
@@ -160,6 +160,8 @@ MonoBehaviour:
   isDragging: 0
   rb: {fileID: 0}
   originalMaterial: {fileID: 0}
+  gridLayout: {fileID: 0}
+  snapToGrid: 1
 --- !u!54 &5330716742952990444
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -206,5 +208,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.4599733, y: 0.8419112, z: 0.5197204}
+  m_Center: {x: -0.0033807133, y: -0.0790444, z: -0.023224253}
