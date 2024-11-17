@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb37a428b86f649b69e121c393d68c33, type: 3}
-  m_Name: LevelData_Test3
+  m_Name: LevelData_Beach
   m_EditorClassIdentifier: 
-  levelName: Test3
-  levelPrompt: Level3
+  levelName: Beach
+  levelPrompt: GO TO THE BEACH
   availableItems:
   - {fileID: 11400000, guid: 13f86dcf3f9238e498f1a9943bc63a5b, type: 2}
   - {fileID: 11400000, guid: 53d2d188800100c4ab1bf3c2553bfc64, type: 2}
@@ -42,5 +42,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ceb6a01c8f2a8a545bf43f46c5fabdea, type: 2}
   - {fileID: 11400000, guid: b9c0e2e7d3f45ae4cb91e43ecbc2076e, type: 2}
   requiredItems:
-  - {fileID: 11400000, guid: d4a687d50c75a6445972ebb14b52bb5e, type: 2}
-  bagCapacity: 10
+  - {fileID: 11400000, guid: b7381dc7ac6ebfc4ba921b9ed80633af, type: 2}
+  - {fileID: 11400000, guid: 9d5bdfa67646eb34f8e49b0c9f2676ab, type: 2}
+  - {fileID: 11400000, guid: 3764774438686694cb14ab12b4c3b605, type: 2}
+  bagCapacity: 5
+  winPrompt: You had an amazing time collecting vitamin D.
+  losePrompt: You burnt yourself and were unable to snorkel...

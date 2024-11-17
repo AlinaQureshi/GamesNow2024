@@ -13,10 +13,9 @@ public class GameManager : MonoBehaviour
     public Bag bag;
     public Transform itemSpawnArea;
     public bool isGameActive = true;
-    public GameObject winEffect;
 
     [SerializeField] LevelData[] levels;
-    private int currentLevelIndex;
+    [SerializeField]private int currentLevelIndex;
     [SerializeField] private float spawnPopDelay = 0.3f;
     
     [Header("Scene References")]
@@ -24,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private Transform itemParent;
 
-    [SerializeField] List<DraggableItem> draggableItems = new();
+    List<DraggableItem> draggableItems = new();
 
     public GridLayout itemGrid;
 
@@ -144,10 +143,6 @@ public class GameManager : MonoBehaviour
     private void WinLevel()
     {
         isGameActive = false;
-        if (winEffect != null)
-        {
-            Instantiate(winEffect, bag.transform.position + Vector3.up * 2f, Quaternion.identity);
-        }
         print("Level Complete!");
         uiManager.ShowGameOverUI(true, currentLevel.winPrompt);
 
@@ -168,6 +163,7 @@ public class GameManager : MonoBehaviour
         currentLevelIndex++;
         if (currentLevelIndex < levels.Length)
         {
+            isGameActive = true;
             LoadLevel(levels[currentLevelIndex]);
         }
     }

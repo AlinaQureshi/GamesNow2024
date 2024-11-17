@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb37a428b86f649b69e121c393d68c33, type: 3}
-  m_Name: LevelData_Test
+  m_Name: LevelData_School
   m_EditorClassIdentifier: 
-  levelName: Test
-  levelPrompt: PACK TO "GO TO SPACE"
+  levelName: School
+  levelPrompt: GO TO SCHOOL
   availableItems:
   - {fileID: 11400000, guid: 13f86dcf3f9238e498f1a9943bc63a5b, type: 2}
   - {fileID: 11400000, guid: 53d2d188800100c4ab1bf3c2553bfc64, type: 2}
@@ -42,5 +42,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ceb6a01c8f2a8a545bf43f46c5fabdea, type: 2}
   - {fileID: 11400000, guid: b9c0e2e7d3f45ae4cb91e43ecbc2076e, type: 2}
   requiredItems:
+  - {fileID: 11400000, guid: 19cde202701b61344ad25e5673432b49, type: 2}
   - {fileID: 11400000, guid: d4a687d50c75a6445972ebb14b52bb5e, type: 2}
-  bagCapacity: 10
+  - {fileID: 11400000, guid: ec7afbdaec1b68b47a95d752d4057f6b, type: 2}
+  bagCapacity: 4
+  winPrompt: You survived another school day!
+  losePrompt: You were bored to death...

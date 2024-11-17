@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb37a428b86f649b69e121c393d68c33, type: 3}
-  m_Name: LevelData_Test2
+  m_Name: LevelData_Space
   m_EditorClassIdentifier: 
-  levelName: Test
-  levelPrompt: Level2
+  levelName: Space
+  levelPrompt: GO TO SPACE
   availableItems:
   - {fileID: 11400000, guid: 13f86dcf3f9238e498f1a9943bc63a5b, type: 2}
   - {fileID: 11400000, guid: 53d2d188800100c4ab1bf3c2553bfc64, type: 2}
@@ -42,5 +42,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ceb6a01c8f2a8a545bf43f46c5fabdea, type: 2}
   - {fileID: 11400000, guid: b9c0e2e7d3f45ae4cb91e43ecbc2076e, type: 2}
   requiredItems:
-  - {fileID: 11400000, guid: d4a687d50c75a6445972ebb14b52bb5e, type: 2}
-  bagCapacity: 10
+  - {fileID: 11400000, guid: b9c0e2e7d3f45ae4cb91e43ecbc2076e, type: 2}
+  - {fileID: 11400000, guid: 401880720d6b1ce4caf31555ce8007e3, type: 2}
+  - {fileID: 11400000, guid: d5bbb5d610609a14a8cdc5bab3238318, type: 2}
+  bagCapacity: 6
+  winPrompt: You were the first gamer to go to space!
+  losePrompt: You got sucked into a black hole.

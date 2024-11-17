@@ -15,7 +15,7 @@ public class AnimationManager : MonoBehaviour
         StartCoroutine(Typewriter());
         IEnumerator Typewriter()
         {
-            promptText.text = "";
+            promptText.text = "PACK TO <br>";
             foreach (var c in text)
             {
                 promptText.text += c;
