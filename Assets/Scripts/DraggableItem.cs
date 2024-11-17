@@ -18,6 +18,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public GridLayout gridLayout;
     public bool snapToGrid = true;
 
+    private bool isInBag;
+
     private void Start()
     {
         rb = GetComponentInChildren<Rigidbody>();
@@ -30,7 +32,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private void OnMouseDown()
     {
         if (!GameManager.Instance.isGameActive) { return; }
-        print("OnMouseDown");
+        //print("OnMouseDown");
         isDragging = true;
         screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         offset = transform.position - Camera.main.ScreenToWorldPoint(
@@ -40,13 +42,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         rb.isKinematic = true;
 
         // visual feedback
-        itemRenderer.material.color = Color.yellow;
+       // itemRenderer.material.color = Color.green;
     }
 
     private void OnMouseDrag()
     {
         if (!isDragging) { return; }
-        print("OnMouseDrag");
+        //print("OnMouseDrag");
         Vector3 curScreenPoint = new(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 
@@ -59,7 +61,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private void OnMouseUp()
     {
         if (!isDragging) { return; }
-        print("OnMouseUp");
+        //print("OnMouseUp");
         isDragging = false;
         rb.isKinematic = false;
 
@@ -67,29 +69,24 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         itemRenderer.material = originalMaterial;
 
         // check if item is over the bag
-        Ray ray = new(transform.position, Vector3.down);
+        //Ray ray = new(transform.position, Vector3.down);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 10f))
+        //if (Physics.Raycast(ray, out RaycastHit hit, 10f))
+        //if (hit.collider.TryGetComponent<Bag>(out var bag))
+        if (isInBag)
         {
-            if (hit.collider.TryGetComponent<Bag>(out var bag))
-            {
-                print("BAG");
-                //  let gravity handle the drop
-                GameManager.Instance.OnItemDropped(this);
-            }
-            else if (snapToGrid && gridLayout != null)
-            {
-                // nearest grid position
-                SnapToNearestGridPosition();
-            }
-            else
-            {
-                // return to original position if not over bag
-                ReturnToStart();
-            }
+            print("BAG");
+            //  let gravity handle the drop
+            GameManager.Instance.OnItemDropped(this);
+        }
+        else if (snapToGrid && gridLayout != null)
+        {
+            // nearest grid position
+            SnapToNearestGridPosition();
         }
         else
         {
+            // return to original position if not over bag
             ReturnToStart();
         }
     }
@@ -126,6 +123,18 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             ReturnToStart();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Bag")
+            isInBag = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Bag")
+            isInBag = false;
     }
 
     public void ReturnToStart()
