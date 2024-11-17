@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelData_Test
   m_EditorClassIdentifier: 
   levelName: Test
-  levelPrompt: Pack to <br><i>"Go To Space"</i>
+  levelPrompt: PACK TO "GO TO SPACE"
   availableItems:
   - {fileID: 11400000, guid: 13f86dcf3f9238e498f1a9943bc63a5b, type: 2}
   - {fileID: 11400000, guid: 53d2d188800100c4ab1bf3c2553bfc64, type: 2}

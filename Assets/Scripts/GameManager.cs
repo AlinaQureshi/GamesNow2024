@@ -1,7 +1,10 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +16,16 @@ public class GameManager : MonoBehaviour
     public GameObject winEffect;
 
     [SerializeField] LevelData[] levels;
-    [SerializeField] private TMP_Text promptText;
     private int currentLevelIndex;
+    [SerializeField] private float spawnPopDelay = 0.3f;
     
+    [Header("Scene References")]
+    [SerializeField] private AnimationManager animationManager;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private Transform itemParent;
+
+    [SerializeField] List<DraggableItem> draggableItems = new();
+
     public GridLayout itemGrid;
 
     private void Awake()
@@ -26,13 +36,29 @@ public class GameManager : MonoBehaviour
         LoadLevel(currentLevel);
     }
 
+    private void Start()
+    {
+        GetAllItems();
+    }
+
+    private void GetAllItems()
+    {
+
+        foreach (Transform item in itemParent)
+        {
+            var draggable  = item.GetComponent<DraggableItem>();
+            draggableItems.Add(draggable); 
+            draggable.PopUp(Random.Range(spawnPopDelay, spawnPopDelay * 2.4f));
+        }
+    }
+
     public void LoadLevel(LevelData levelData)
     {
         currentLevel = levelData;
         ClearLevel();
         //SpawnItems();
-        SpawnItemsInGrid();
-        promptText.text = levelData.levelPrompt;
+        //SpawnItemsInGrid();
+        animationManager.ShowPrompt(levelData.levelPrompt);
     }
 
     private void SpawnItems()
@@ -58,7 +84,7 @@ public class GameManager : MonoBehaviour
     private void SpawnItemsInGrid()
     {
         int currentIndex = 0;
-
+        float delay = 0;
         foreach (var itemData in currentLevel.availableItems)
         {
             Vector3 spawnPosition = itemGrid.GetGridPosition(currentIndex);
@@ -67,19 +93,22 @@ public class GameManager : MonoBehaviour
             DraggableItem draggable = item.GetComponent<DraggableItem>();
             draggable.itemData = itemData;
             draggable.gridLayout = itemGrid; // assign grid reference to item
-
+            draggable.PopUp(delay);
+            delay += spawnPopDelay;
             currentIndex++;
         }
     }
 
     private void ClearLevel()
     {
-        foreach (var item in bag.itemsInBag)
+        foreach (var item in draggableItems)
         {
-            Destroy(item.gameObject);
+            item.ReturnToStart();
         }
         bag.itemsInBag.Clear();
-        promptText.text = "";
+        animationManager.ShowPrompt("");
+        animationManager.CloseBag(false);
+
     }
 
     public void OnItemDropped(DraggableItem item)
@@ -95,9 +124,20 @@ public class GameManager : MonoBehaviour
         bool hasAllRequired = currentLevel.requiredItems.All(required =>
             bag.itemsInBag.Any(item => item.itemData.itemName == required.itemName));
 
-        if (hasAllRequired)
+        StartCoroutine(CloseBriefCaseAndCheck());
+        IEnumerator CloseBriefCaseAndCheck()
         {
-            WinLevel();
+            animationManager.CloseBag(true);
+            yield return new WaitForSeconds(0.6f);
+            
+            if (hasAllRequired)
+            {
+                WinLevel();
+            }
+            else
+            {
+                LoseLevel();
+            }
         }
     }
 
@@ -109,11 +149,21 @@ public class GameManager : MonoBehaviour
             Instantiate(winEffect, bag.transform.position + Vector3.up * 2f, Quaternion.identity);
         }
         print("Level Complete!");
-        GetNextLevel();
+        uiManager.ShowGameOverUI(true, currentLevel.winPrompt);
+
         // additional win logics
     }
+    
+    private void LoseLevel()
+    {
+        isGameActive = false;
+        print("Level Lost!");
+        // additional lose logics
+        uiManager.ShowGameOverUI(false, currentLevel.losePrompt);
 
-    private void GetNextLevel()
+    }
+
+    public void GetNextLevel()
     {
         currentLevelIndex++;
         if (currentLevelIndex < levels.Length)

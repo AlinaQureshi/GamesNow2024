@@ -9,4 +9,6 @@ public class LevelData : ScriptableObject
     public List<ItemData> availableItems;
     public List<ItemData> requiredItems;
     public float bagCapacity = 10f;
+    public string winPrompt;
+    public string losePrompt;
 }

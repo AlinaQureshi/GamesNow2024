@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,19 +8,53 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public ItemData itemData;
     private Vector3 screenPoint;
     private Vector3 offset;
-    [SerializeField] private bool isDragging = false;
-    [SerializeField] private Rigidbody rb;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
-    [SerializeField] private Material originalMaterial;
     private const float hoverHeight = 0.5f;
     private Renderer itemRenderer;
 
+    [Header("Scene References")]
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Material originalMaterial;
+    
     [Header("Grid Settings")]
     public GridLayout gridLayout;
     public bool snapToGrid = true;
 
+    [Header("Polish and Debug")]
+    [SerializeField] private bool isDragging = false;
+    [SerializeField] private float scaleTime = 1f;
+
     private bool isInBag;
+    private Vector3 defaultScale;
+
+
+    private void Awake()
+    {
+        defaultScale = transform.localScale;
+        transform.localScale = Vector3.zero;
+    }
+
+    public void PopUp(float delay)
+    {
+        StartCoroutine(ScaleOverTime());
+        IEnumerator ScaleOverTime() {
+            var startScale = Vector3.zero;
+            var endScale = defaultScale * 1.2f;
+            var elapsed = 0f;
+
+            yield return new WaitForSeconds(delay);
+            while (elapsed < scaleTime) {
+                var t = elapsed / scaleTime;
+                transform.localScale = Vector3.Lerp(startScale, endScale, t);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(0.2f);
+            transform.localScale = defaultScale;
+        }
+    }
 
     private void Start()
     {

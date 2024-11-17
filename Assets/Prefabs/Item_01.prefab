@@ -157,11 +157,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: c454d8b7f83fe47a69151d3979947cb5, type: 2}
-  isDragging: 0
   rb: {fileID: 0}
   originalMaterial: {fileID: 0}
   gridLayout: {fileID: 0}
   snapToGrid: 1
+  isDragging: 0
+  scaleTime: 0.3
 --- !u!54 &5330716742952990444
 Rigidbody:
   m_ObjectHideFlags: 0
