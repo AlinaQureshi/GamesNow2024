@@ -40,7 +40,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         StartCoroutine(ScaleOverTime());
         IEnumerator ScaleOverTime() {
             var startScale = Vector3.zero;
-            var endScale = defaultScale * 1.2f;
+            var endScale = defaultScale * 1.1f;
             var elapsed = 0f;
 
             yield return new WaitForSeconds(delay);
@@ -69,6 +69,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         if (!GameManager.Instance.isGameActive) { return; }
         //print("OnMouseDown");
+        AudioManager.instance.PlaySFX("pick");
+
         isDragging = true;
         screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         offset = transform.position - Camera.main.ScreenToWorldPoint(
@@ -100,6 +102,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         //print("OnMouseUp");
         isDragging = false;
         rb.isKinematic = false;
+        AudioManager.instance.PlaySFX("drop");
 
         // reset material
         itemRenderer.material = originalMaterial;

@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
 
     private void WinLevel()
     {
+        AudioManager.instance.PlaySFX("win");
         isGameActive = false;
         print("Level Complete!");
         uiManager.ShowGameOverUI(true, currentLevel.winPrompt);
@@ -151,6 +152,7 @@ public class GameManager : MonoBehaviour
     
     private void LoseLevel()
     {
+        AudioManager.instance.PlaySFX("lose");
         isGameActive = false;
         print("Level Lost!");
         // additional lose logics
