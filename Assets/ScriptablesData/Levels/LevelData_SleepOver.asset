@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb37a428b86f649b69e121c393d68c33, type: 3}
+  m_Name: LevelData_SleepOver
+  m_EditorClassIdentifier: 
+  levelName: Sleepover
+  levelPrompt: GO TO A SLEEPOVER
+  availableItems:
+  - {fileID: 11400000, guid: 13f86dcf3f9238e498f1a9943bc63a5b, type: 2}
+  - {fileID: 11400000, guid: 53d2d188800100c4ab1bf3c2553bfc64, type: 2}
+  - {fileID: 11400000, guid: acf91c7b6be26cc45aa26aa235534032, type: 2}
+  - {fileID: 11400000, guid: 0eee6edac5526b8488aafffe32c89ebe, type: 2}
+  - {fileID: 11400000, guid: 3369de1f584f0f94585ed9e924cd0855, type: 2}
+  - {fileID: 11400000, guid: d5bbb5d610609a14a8cdc5bab3238318, type: 2}
+  - {fileID: 11400000, guid: 4d1fab3bd3ec81a4f80925ba547ee7dd, type: 2}
+  - {fileID: 11400000, guid: d4a687d50c75a6445972ebb14b52bb5e, type: 2}
+  - {fileID: 11400000, guid: b7381dc7ac6ebfc4ba921b9ed80633af, type: 2}
+  - {fileID: 11400000, guid: 9d5bdfa67646eb34f8e49b0c9f2676ab, type: 2}
+  - {fileID: 11400000, guid: 3484129f5e3f0b940b2e792393b709b8, type: 2}
+  - {fileID: 11400000, guid: 84489b3f0382b884eaccf82c5b2aa5f8, type: 2}
+  - {fileID: 11400000, guid: f639d86cd74e5794ba57fd06ed135458, type: 2}
+  - {fileID: 11400000, guid: 78afad01d417df146a6f10d836f04e25, type: 2}
+  - {fileID: 11400000, guid: 401880720d6b1ce4caf31555ce8007e3, type: 2}
+  - {fileID: 11400000, guid: fc32a9b2bf7c05c4b9ed1bfba212eddb, type: 2}
+  - {fileID: 11400000, guid: 020b7f5b3e148364d9e9dd0eb7191919, type: 2}
+  - {fileID: 11400000, guid: ec7afbdaec1b68b47a95d752d4057f6b, type: 2}
+  - {fileID: 11400000, guid: c3fbbad006968674886ae02aee3591a6, type: 2}
+  - {fileID: 11400000, guid: 3764774438686694cb14ab12b4c3b605, type: 2}
+  - {fileID: 11400000, guid: 1aa5ecd7c55a537419439e6c7a02d22d, type: 2}
+  - {fileID: 11400000, guid: cb0f6998d678e184cbc8a1e62d4800e5, type: 2}
+  - {fileID: 11400000, guid: d7fc29cd36300bf4b971e76a782e549d, type: 2}
+  - {fileID: 11400000, guid: 6f5e6faca187c5f408ece3caa29b87d0, type: 2}
+  - {fileID: 11400000, guid: ceb6a01c8f2a8a545bf43f46c5fabdea, type: 2}
+  - {fileID: 11400000, guid: b9c0e2e7d3f45ae4cb91e43ecbc2076e, type: 2}
+  requiredItems:
+  - {fileID: 11400000, guid: 1aa5ecd7c55a537419439e6c7a02d22d, type: 2}
+  - {fileID: 11400000, guid: cb0f6998d678e184cbc8a1e62d4800e5, type: 2}
+  bagCapacity: 4
+  winPrompt: You had so much fun gossiping all night!!
+  losePrompt: Your friends think you're kinda weird.
