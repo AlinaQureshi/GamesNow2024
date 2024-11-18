@@ -5,7 +5,8 @@ A cozy packing adventure through the journeys of life—one briefcase at a time!
 # Theme: Space
 In this game, you have limited “space” in your briefcase, and are meant to pack only your essentials for each trip.
 
-[Gameplay Video](https://youtu.be/rCK19FNnju4)
+* [itch.io Page](https://galaxylina.itch.io/briefspaces)
+* [Gameplay Video](https://youtu.be/rCK19FNnju4)
 
 # Team
   * Alina - Production, Programming, Design
@@ -15,11 +16,18 @@ In this game, you have limited “space” in your briefcase, and are meant to p
   * Tusher - Programming, Design
 
 # Tools and Resources
-Unity 6, Visual Studio Code, JetBrains Rider 2024, reaper, ocenaudio, OBS, MIRO, google docs, Photoshop, Blender
+  * Unity 6
+  * Visual Studio Code
+  * JetBrains Rider 2024
+  * REAPER
+  * ocenaudio
+  * OBS
+  * MIRO
+  * Google Docs
+  * Trello
+  * Photoshop
+  * Blender
 
-Estimated work hours ~80
+Estimated work hours *~80*
 
-
-
-
-Our team spans over 3 different timezones/countries (Portugal, Italy and South Korea), and every person in the group belongs to a different country (namely Bangladesh, Croatia, Pakistan, Nigeria and South Korea).
+Our team spans **3** different timezones/countries (**Portugal**, **Italy**, and **South Korea**), and everyone in the group belongs to a different country (**Bangladesh**, **Croatia**, **Pakistan**, **Nigeria**, and **South Korea**).
